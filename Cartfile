@@ -1,0 +1,4 @@
+# carthage update --platform iOS --no-use-binaries --verbose
+github "QMUI/QMUI_iOS"
+github "CoderMJLee/MJRefresh"
+github "SnapKit/SnapKit"
