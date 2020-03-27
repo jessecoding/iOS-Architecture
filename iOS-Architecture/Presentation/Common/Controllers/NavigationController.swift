@@ -1,14 +1,14 @@
 //
-//  MineViewController.swift
-//  iOS-Architecture
+//  NavigationController.swift
+//  App
 //
-//  Created by jesse.xu on 2020/3/25.
+//  Created by jesse.xu on 2020/3/20.
 //  Copyright © 2020 fleetlabs.com. All rights reserved.
 //
 
-import UIKit
+import QMUIKit
 
-class MineViewController: BaseViewController {
+class NavigationController: QMUINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

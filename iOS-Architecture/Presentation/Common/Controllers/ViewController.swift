@@ -6,7 +6,6 @@
 //  Copyright © 2020 fleetlabs.com. All rights reserved.
 //
 
-import UIKit
 import QMUIKit
 
 class ViewController: UIViewController, QMUINavigationControllerDelegate {
@@ -17,15 +16,7 @@ class ViewController: UIViewController, QMUINavigationControllerDelegate {
         view.backgroundColor = QMUICMI().whiteColor
     }
 
-
-//    func preferredNavigationBarHidden() -> Bool {
-//        return true
-//    }
-    
-//    func customNavigationBarTransitionKey() -> String? {
-//        return "re"
-//    }
-    
+    // MARK: - QMUINavigationControllerDelegate
     func shouldCustomizeNavigationBarTransitionIfHideable() -> Bool {
         return true
     }

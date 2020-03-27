@@ -2,3 +2,6 @@
 github "QMUI/QMUI_iOS"
 github "CoderMJLee/MJRefresh"
 github "SnapKit/SnapKit"
+github "onevcat/Kingfisher"
+github "ibireme/YYCache"
+github "xmartlabs/Eureka"

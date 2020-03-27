@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  iOS-Architecture
+
+  Created by jesse.xu on 2020/3/27.
+  Copyright © 2020 fleetlabs.com. All rights reserved.
+*/
+
+
+// Tab bar
+TAB.BAR.HOME = "首页";
+TAB.BAR.DISCOVERY = "发现";
+TAB.BAR.STUDY = "学习";
+TAB.BAR.MINE = "我的";
+

@@ -6,7 +6,6 @@
 //  Copyright © 2020 fleetlabs.com. All rights reserved.
 //
 
-import UIKit
 import QMUIKit
 
 class BaseViewController: QMUICommonViewController {

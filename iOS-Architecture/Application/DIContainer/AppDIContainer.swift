@@ -17,4 +17,22 @@ final class AppDIContainer {
 //                                                               imageDataTransferService: imageDataTransferService)
         return HomeSceneDIContainer()
     }
+
+    func makeDiscoverySceneDIContainer() -> DiscoverySceneDIContainer {
+//        let dependencies = MoviesSceneDIContainer.Dependencies(apiDataTransferService: apiDataTransferService,
+//                                                               imageDataTransferService: imageDataTransferService)
+        return DiscoverySceneDIContainer()
+    }
+    
+    func makeStudySceneDIContainer() -> StudySceneDIContainer {
+//        let dependencies = MoviesSceneDIContainer.Dependencies(apiDataTransferService: apiDataTransferService,
+//                                                               imageDataTransferService: imageDataTransferService)
+        return StudySceneDIContainer()
+    }
+
+    func makeMineSceneDIContainer() -> MineSceneDIContainer {
+//        let dependencies = MoviesSceneDIContainer.Dependencies(apiDataTransferService: apiDataTransferService,
+//                                                               imageDataTransferService: imageDataTransferService)
+        return MineSceneDIContainer()
+    }
 }

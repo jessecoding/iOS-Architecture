@@ -1,0 +1,6 @@
+$(SRCROOT)/Carthage/Build/iOS/QMUIKit.framework
+$(SRCROOT)/Carthage/Build/iOS/MJRefresh.framework
+$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework
+$(SRCROOT)/Carthage/Build/iOS/YYCache.framework
+$(SRCROOT)/Carthage/Build/iOS/Eureka.framework
+$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework
