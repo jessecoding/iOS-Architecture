@@ -30,7 +30,6 @@ class TableViewController: QMUICommonTableViewController {
         navigationAnimator.offsetYToStartAnimation = 44
         navigationAnimator.scrollView = self.tableView
         navigationAnimator.animationBlock = {[weak self] (_, offsetYReached) in
-
             self?.navigationController?.setNavigationBarHidden(offsetYReached, animated: true)
         }
         

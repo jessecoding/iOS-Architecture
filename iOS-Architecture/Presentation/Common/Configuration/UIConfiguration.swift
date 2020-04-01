@@ -16,44 +16,6 @@ public func QMUICMI() -> QMUIConfiguration {
     return cmi
 }
 
-public func UIImageMake(_ img: String) -> UIImage {
-    guard let image = UIImage(named: img) else {
-        fatalError("Cannot instantiate initial UIImage with name \(img)")
-    }
-    return image
-}
-
-/// 字体相关的宏，用于快速创建一个字体对象，更多创建宏可查看 UIFont+QMUI.h
-public func UIFontMake(_ size: CGFloat) -> UIFont {
-    return UIFont.systemFont(ofSize: size)
-}
-public func UIFontBoldMake(_ size: CGFloat) -> UIFont {
-    return UIFont.boldSystemFont(ofSize: size)
-}
-public func UIFontBoldWithFont(_ font: UIFont)  -> UIFont {
-    return UIFont.boldSystemFont(ofSize: font.pointSize)
-}
-public func CodeFontMake(_ pointSize: CGFloat) -> UIFont {
-    guard let font = UIFont(name: "Menlo", size: pointSize) else {
-        fatalError("Cannot instantiate initial UIFont")
-    }
-    return font
-}
-/// 斜体只对数字和字母有效，中文无效
-public func UIFontItalicMake(_ size: CGFloat) -> UIFont {
-    return UIFont.italicSystemFont(ofSize: size)
-}
-
-/// UIColor 相关的宏，用于快速创建一个 UIColor 对象，更多创建的宏可查看 UIColor+QMUI.h
-public func UIColorMake(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat) -> UIColor {
-    return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: 1)
-}
-
-public func UIColorMakeWithRGBA(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ a: CGFloat) -> UIColor {
-    return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a/1.0)
-}
-
-
 /// 标志当前项目是否正使用配置表功能
 let QMUICMIActivated            = QMUICMI().active
 
@@ -255,7 +217,7 @@ let UpdatesIndicatorCenterOffsetLandscape           = QMUICMI().updatesIndicator
 
 // MARK: - Others
 
-let AutomaticCustomNavigationBarTransitionStyle = QMUICMI().automaticCustomNavigationBarTransitionStyle // 界面 push/pop 时是否要自动根据两个界面的 barTintColor/backgroundImage/shadowImage 的样式差异来决定是否使用自定义的导航栏效果
+let AutomaticCustomNavigationBarTransitionStyle     = QMUICMI().automaticCustomNavigationBarTransitionStyle // 界面 push/pop 时是否要自动根据两个界面的 barTintColor/backgroundImage/shadowImage 的样式差异来决定是否使用自定义的导航栏效果
 let SupportedOrientationMask                        = QMUICMI().supportedOrientationMask          // 默认支持的横竖屏方向
 let AutomaticallyRotateDeviceOrientation            = QMUICMI().automaticallyRotateDeviceOrientation  // 是否在界面切换或 viewController.supportedOrientationMask 发生变化时自动旋转屏幕，默认为 NO
 let StatusbarStyleLightInitially                    = QMUICMI().statusbarStyleLightInitially      // 默认的状态栏内容是否使用白色，默认为NO，也即黑色

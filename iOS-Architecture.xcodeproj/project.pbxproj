@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D31C9FA3243189CE008E7DE0 /* UICommonDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31C9FA2243189CE008E7DE0 /* UICommonDefines.swift */; };
 		D337E11D242B28B200CE5DE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D337E11C242B28B200CE5DE0 /* AppDelegate.swift */; };
 		D337E127242B28B200CE5DE0 /* iOS_Architecture.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D337E125242B28B200CE5DE0 /* iOS_Architecture.xcdatamodeld */; };
 		D337E129242B28B300CE5DE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D337E128242B28B300CE5DE0 /* Assets.xcassets */; };
@@ -20,8 +21,11 @@
 		D337E17E242B458500CE5DE0 /* UIViewController+AddChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = D337E17D242B458500CE5DE0 /* UIViewController+AddChild.swift */; };
 		D337E180242B459100CE5DE0 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D337E17F242B459100CE5DE0 /* Observable.swift */; };
 		D337E182242B466200CE5DE0 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D337E181242B466200CE5DE0 /* UseCase.swift */; };
+		D3CC05102432CF0C002026EC /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC050F2432CF0C002026EC /* ThemeProtocol.swift */; };
+		D3CC05122432D5A2002026EC /* QMUIConfigurationTemplateDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC05112432D5A2002026EC /* QMUIConfigurationTemplateDark.swift */; };
+		D3CC0514243318AF002026EC /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC0513243318AF002026EC /* ThemeManager.swift */; };
 		D3EABD5D242DD487003C569B /* UIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EABD53242DD487003C569B /* UIConfiguration.swift */; };
-		D3EABD5E242DD487003C569B /* UIConfigurationTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EABD54242DD487003C569B /* UIConfigurationTemplate.swift */; };
+		D3EABD5E242DD487003C569B /* QMUIConfigurationTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EABD54242DD487003C569B /* QMUIConfigurationTemplate.swift */; };
 		D3EABD5F242DD487003C569B /* CommonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EABD56242DD487003C569B /* CommonUI.swift */; };
 		D3EABD60242DD487003C569B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EABD58242DD487003C569B /* ViewController.swift */; };
 		D3EABD61242DD487003C569B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EABD59242DD487003C569B /* BaseViewController.swift */; };
@@ -42,6 +46,7 @@
 		D3EABDA2242DE638003C569B /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EABDA1242DE638003C569B /* StringExtension.swift */; };
 		D3EABDA4242DE820003C569B /* StudySceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EABDA3242DE820003C569B /* StudySceneDIContainer.swift */; };
 		D3EABDA6242DE867003C569B /* MineSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EABDA5242DE867003C569B /* MineSceneDIContainer.swift */; };
+		D3EABDA8242DF537003C569B /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EABDA7242DF537003C569B /* UserDefault.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D31C9FA2243189CE008E7DE0 /* UICommonDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICommonDefines.swift; sourceTree = "<group>"; };
 		D337E119242B28B200CE5DE0 /* iOS-Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Architecture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D337E11C242B28B200CE5DE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D337E126242B28B200CE5DE0 /* iOS_Architecture.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOS_Architecture.xcdatamodel; sourceTree = "<group>"; };
@@ -81,8 +87,11 @@
 		D337E17D242B458500CE5DE0 /* UIViewController+AddChild.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddChild.swift"; sourceTree = "<group>"; };
 		D337E17F242B459100CE5DE0 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		D337E181242B466200CE5DE0 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		D3CC050F2432CF0C002026EC /* ThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
+		D3CC05112432D5A2002026EC /* QMUIConfigurationTemplateDark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QMUIConfigurationTemplateDark.swift; sourceTree = "<group>"; };
+		D3CC0513243318AF002026EC /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		D3EABD53242DD487003C569B /* UIConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIConfiguration.swift; sourceTree = "<group>"; };
-		D3EABD54242DD487003C569B /* UIConfigurationTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIConfigurationTemplate.swift; sourceTree = "<group>"; };
+		D3EABD54242DD487003C569B /* QMUIConfigurationTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QMUIConfigurationTemplate.swift; sourceTree = "<group>"; };
 		D3EABD56242DD487003C569B /* CommonUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUI.swift; sourceTree = "<group>"; };
 		D3EABD58242DD487003C569B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D3EABD59242DD487003C569B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +112,7 @@
 		D3EABDA1242DE638003C569B /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		D3EABDA3242DE820003C569B /* StudySceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySceneDIContainer.swift; sourceTree = "<group>"; };
 		D3EABDA5242DE867003C569B /* MineSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineSceneDIContainer.swift; sourceTree = "<group>"; };
+		D3EABDA7242DF537003C569B /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				D337E151242B30D400CE5DE0 /* Data.swift */,
+				D3EABDA7242DF537003C569B /* UserDefault.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -271,8 +282,12 @@
 		D3EABD52242DD487003C569B /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				D3EABD54242DD487003C569B /* QMUIConfigurationTemplate.swift */,
+				D3CC05112432D5A2002026EC /* QMUIConfigurationTemplateDark.swift */,
+				D3CC0513243318AF002026EC /* ThemeManager.swift */,
+				D3CC050F2432CF0C002026EC /* ThemeProtocol.swift */,
+				D31C9FA2243189CE008E7DE0 /* UICommonDefines.swift */,
 				D3EABD53242DD487003C569B /* UIConfiguration.swift */,
-				D3EABD54242DD487003C569B /* UIConfigurationTemplate.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -599,6 +614,7 @@
 				D3EABD5F242DD487003C569B /* CommonUI.swift in Sources */,
 				D337E170242B400A00CE5DE0 /* UIHelper.swift in Sources */,
 				D3EABD87242DD96F003C569B /* DiscoveryViewModel.swift in Sources */,
+				D3CC05122432D5A2002026EC /* QMUIConfigurationTemplateDark.swift in Sources */,
 				D337E11D242B28B200CE5DE0 /* AppDelegate.swift in Sources */,
 				D3EABDA4242DE820003C569B /* StudySceneDIContainer.swift in Sources */,
 				D3EABDA2242DE638003C569B /* StringExtension.swift in Sources */,
@@ -607,22 +623,26 @@
 				D3EABD61242DD487003C569B /* BaseViewController.swift in Sources */,
 				D3EABD8D242DD9E4003C569B /* StudyViewModel.swift in Sources */,
 				D3EABDA6242DE867003C569B /* MineSceneDIContainer.swift in Sources */,
+				D3EABDA8242DF537003C569B /* UserDefault.swift in Sources */,
 				D337E182242B466200CE5DE0 /* UseCase.swift in Sources */,
 				D3EABD93242DDA35003C569B /* MineViewModel.swift in Sources */,
 				D3EABD92242DDA35003C569B /* MineViewController.swift in Sources */,
+				D3CC05102432CF0C002026EC /* ThemeProtocol.swift in Sources */,
 				D3EABD86242DD96F003C569B /* DiscoveryViewController.swift in Sources */,
 				D3EABD97242DDF78003C569B /* BaseFormViewController.swift in Sources */,
 				D337E159242B334200CE5DE0 /* AppDIContainer.swift in Sources */,
 				D3EABD99242DE18D003C569B /* DiscoverySceneDIContainer.swift in Sources */,
 				D337E152242B30D400CE5DE0 /* Data.swift in Sources */,
 				D3EABD82242DD664003C569B /* HomeViewController.swift in Sources */,
+				D31C9FA3243189CE008E7DE0 /* UICommonDefines.swift in Sources */,
 				D3EABD60242DD487003C569B /* ViewController.swift in Sources */,
 				D3EABD5D242DD487003C569B /* UIConfiguration.swift in Sources */,
 				D337E17E242B458500CE5DE0 /* UIViewController+AddChild.swift in Sources */,
+				D3CC0514243318AF002026EC /* ThemeManager.swift in Sources */,
 				D3EABD62242DD487003C569B /* TableViewController.swift in Sources */,
 				D337E15B242B33DF00CE5DE0 /* HomeSceneDIContainer.swift in Sources */,
 				D3EABD8C242DD9E4003C569B /* StudyViewController.swift in Sources */,
-				D3EABD5E242DD487003C569B /* UIConfigurationTemplate.swift in Sources */,
+				D3EABD5E242DD487003C569B /* QMUIConfigurationTemplate.swift in Sources */,
 				D3EABD63242DD487003C569B /* NavigationController.swift in Sources */,
 				D3EABD64242DD487003C569B /* TabBarController.swift in Sources */,
 				D337E127242B28B200CE5DE0 /* iOS_Architecture.xcdatamodeld in Sources */,
