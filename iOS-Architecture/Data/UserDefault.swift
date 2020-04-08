@@ -28,6 +28,7 @@ struct Storage {
     @UserDefault(.isFirstLaunch, defaultValue: false)
     static var isFirstLaunch: Bool
     
+
     @UserDefault(.selectedThemeIdentifier, defaultValue: ThemeIdentifier.default.rawValue)
     static var selectedThemeIdentifier: NSString
     

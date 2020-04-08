@@ -8,9 +8,27 @@
 
 import QMUIKit
 
+func getThemeProtocol(_ theme: NSObject?) -> ThemeProtocol {
+    guard let themeProtocol = theme as? ThemeProtocol else {
+        fatalError("Cannot get ThemeProtocol")
+    }
+    return themeProtocol
+}
+
+func getThemeIdentifier(_ identifier: (NSCopying & NSObjectProtocol)?) -> NSString {
+    guard let themeIdentifier = identifier as? NSString else {
+        fatalError("Cannot get themeIdentifier")
+    }
+    return themeIdentifier
+}
+
+func isDarkIdentifier(_ identifier: (NSCopying & NSObjectProtocol)?) -> Bool {
+    return ThemeIdentifier.dark == ThemeIdentifier(rawValue: getThemeIdentifier(identifier))
+}
+
 class ThemeManager {
     
-    class var currentTheme: ThemeProtocol  { get { return QMUIThemeManagerCenter.defaultThemeManager.currentTheme as! ThemeProtocol } }
+    class var currentTheme: ThemeProtocol  { get { return getThemeProtocol(QMUIThemeManagerCenter.defaultThemeManager.currentTheme) } }
     class var sharedThemeManager: ThemeManager {
         struct Static {
            static let sharedInstance : ThemeManager = ThemeManager()
@@ -18,7 +36,6 @@ class ThemeManager {
         return Static.sharedInstance
     }
 
-    
     var tm_backgroundColor: UIColor
     var tm_backgroundColorLighten: UIColor
     var tm_backgroundColorHighlighted: UIColor
@@ -38,64 +55,52 @@ class ThemeManager {
         
     private init() {
         self.tm_backgroundColor = UIColor.qmui_color(themeProvider: { (_, _, theme) -> UIColor in
-            guard  let theme = theme as? ThemeProtocol else { return .red }
-            return theme.themeBackgroundColor()
+            return getThemeProtocol(theme).themeBackgroundColor()
         })
         self.tm_backgroundColorLighten = UIColor.qmui_color(themeProvider: { (_, _, theme) -> UIColor in
-            guard  let theme = theme as? ThemeProtocol else { return .red }
-            return theme.themeBackgroundColorLighten()
+            return getThemeProtocol(theme).themeBackgroundColorLighten()
         })
         self.tm_backgroundColorHighlighted = UIColor.qmui_color(themeProvider: { (_, _, theme) -> UIColor in
-            guard  let theme = theme as? ThemeProtocol else { return .red }
-            return theme.themeBackgroundColorHighlighted()
+            return getThemeProtocol(theme).themeBackgroundColorHighlighted()
         })
         self.tm_tintColor = UIColor.qmui_color(themeProvider: { (_, _, theme) -> UIColor in
-            guard  let theme = theme as? ThemeProtocol else { return .red }
-            return theme.themeTintColor()
+            return getThemeProtocol(theme).themeTintColor()
         })
         self.tm_titleTextColor = UIColor.qmui_color(themeProvider: { (_, _, theme) -> UIColor in
-            guard  let theme = theme as? ThemeProtocol else { return .red }
-            return theme.themeTitleTextColor()
+            return getThemeProtocol(theme).themeTitleTextColor()
         })
         self.tm_mainTextColor = UIColor.qmui_color(themeProvider: { (_, _, theme) -> UIColor in
-            guard  let theme = theme as? ThemeProtocol else { return .red }
-            return theme.themeMainTextColor()
+            return getThemeProtocol(theme).themeMainTextColor()
         })
         self.tm_descriptionTextColor = UIColor.qmui_color(themeProvider: { (_, _, theme) -> UIColor in
-            guard  let theme = theme as? ThemeProtocol else { return .red }
-            return theme.themeDescriptionTextColor()
+            return getThemeProtocol(theme).themeDescriptionTextColor()
         })
         self.tm_placeholderColor = UIColor.qmui_color(themeProvider: { (_, _, theme) -> UIColor in
-            guard  let theme = theme as? ThemeProtocol else { return .red }
-            return theme.themePlaceholderColor()
+            return getThemeProtocol(theme).themePlaceholderColor()
         })
         self.tm_codeColor = UIColor.qmui_color(themeProvider: { (_, _, theme) -> UIColor in
-            guard  let theme = theme as? ThemeProtocol else { return .red }
-            return theme.themeCodeColor()
+            return getThemeProtocol(theme).themeCodeColor()
         })
         self.tm_separatorColor = UIColor.qmui_color(themeProvider: { (_, _, theme) -> UIColor in
-            guard  let theme = theme as? ThemeProtocol else { return .red }
-            return theme.themeSeparatorColor()
+            return getThemeProtocol(theme).themeSeparatorColor()
         })
         self.tm_gridItemTintColor = UIColor.qmui_color(themeProvider: { (_, _, theme) -> UIColor in
-            guard  let theme = theme as? ThemeProtocol else { return .red }
-            return theme.themeGridItemTintColor()
+            return getThemeProtocol(theme).themeGridItemTintColor()
         })
         
         self.tm_searchBarTextFieldBackgroundImage = UIImage.qmui_image(themeProvider: { (_, _, theme) -> UIImage in
-            guard  let theme = theme as? ThemeProtocol else { return UIImage() }
-            return UISearchBar.qmui_generateTextFieldBackgroundImage(with: theme.themeBackgroundColorHighlighted()) ?? UIImage()
+            return UISearchBar.qmui_generateTextFieldBackgroundImage(with: getThemeProtocol(theme).themeBackgroundColorHighlighted()) ?? UIImage()
         })
         self.tm_searchBarBackgroundImage = UIImage.qmui_image(themeProvider: { (_, _, theme) -> UIImage in
-            guard  let theme = theme as? ThemeProtocol else { return UIImage() }
-            return UISearchBar.qmui_generateBackgroundImage(with: theme.themeBackgroundColor(), borderColor: nil) ?? UIImage()
+            return UISearchBar.qmui_generateBackgroundImage(with: getThemeProtocol(theme).themeBackgroundColor(), borderColor: nil) ?? UIImage()
         })
         
         self.tm_standardBlueEffect = UIVisualEffect.qmui_effect(themeProvider: { (_, identifier, _) -> UIVisualEffect in
-            guard let identifier = identifier as? NSString else { return UIBlurEffect(style: .light) }
-            return UIBlurEffect(style: ThemeIdentifier.dark.rawValue.isEqual(to: identifier as String) ? .dark : .light)
+            return UIBlurEffect(style: isDarkIdentifier(identifier) ? .dark : .light)
         })
     }
+    
+
 }
 
 extension UIColor {

@@ -1,6 +1,6 @@
 github "CoderMJLee/MJRefresh" "3.3.1"
-github "QMUI/QMUI_iOS" "4.0.4"
+github "QMUI/QMUI_iOS" "4.1.1"
 github "SnapKit/SnapKit" "5.0.1"
 github "ibireme/YYCache" "1.0.4"
-github "onevcat/Kingfisher" "5.13.2"
+github "onevcat/Kingfisher" "5.13.3"
 github "xmartlabs/Eureka" "5.2.1"

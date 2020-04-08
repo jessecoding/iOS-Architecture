@@ -26,12 +26,14 @@ class QMUIConfigurationTemplateDark: QMUIConfigurationTemplate {
     
     override func shouldApplyTemplateAutomatically() -> Bool {
         QMUIThemeManagerCenter.defaultThemeManager.addThemeIdentifier(self.themeName(), theme: self)
-        QMUIThemeManagerCenter.defaultThemeManager.currentTheme = self
+
+        let selectedThemeIdentifier = Storage.selectedThemeIdentifier
+        let result = selectedThemeIdentifier == self.themeName()
+        if result {
+            QMUIThemeManagerCenter.defaultThemeManager.currentTheme = self
+        }
         
-        
-        return true
-        
-//        return false
+        return result
     }
     
 

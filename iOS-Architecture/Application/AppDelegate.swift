@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import QMUIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleThemeDidChangeNotification(_:)), name: NSNotification.Name.QMUIThemeDidChange, object: nil)
+        
+        QMUIThemeManagerCenter.defaultThemeManager.themeGenerator = { (identifier) in
+            if identifier.isEqual(ThemeIdentifier.default.rawValue) {
+                return QMUIConfigurationTemplate()
+            }
+            if identifier.isEqual(ThemeIdentifier.dark.rawValue) {
+                return QMUIConfigurationTemplateDark()
+            }
+            return nil
+        }
+        
+        if #available(iOS 13.0, *) {
+            if let currentThemeIdentifier = QMUIThemeManagerCenter.defaultThemeManager.currentThemeIdentifier {
+                QMUIThemeManagerCenter.defaultThemeManager.identifierForTrait = { (trait) in
+                    if trait.userInterfaceStyle == .dark {
+                        return ThemeIdentifier.dark.rawValue
+                    }
+                    
+                    if currentThemeIdentifier.isEqual(ThemeIdentifier.dark.rawValue) {
+                        return ThemeIdentifier.default.rawValue
+                    }
+                    
+                    return currentThemeIdentifier
+                }
+//                QMUIThemeManagerCenter.defaultThemeManager.respondsSystemStyleAutomatically = true
+            }
+        }
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = TabBarController(appDIContainer)
         window?.makeKeyAndVisible()
@@ -69,5 +100,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    @objc func handleThemeDidChangeNotification(_ notification: NSNotification) {
+        guard let manager = notification.object as? QMUIThemeManager, let themeManagerName = manager.name as? String, let currentThemeIdentifier = manager.currentThemeIdentifier as? NSString  else { return }
+        if themeManagerName != QMUIThemeManagerNameDefault { return }
+        Storage.selectedThemeIdentifier = currentThemeIdentifier
+        ThemeManager.currentTheme.applyConfigurationTemplate()
+        CommonUI.renderGlobalAppearances()
+    }
 }
 
